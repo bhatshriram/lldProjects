@@ -34,11 +34,11 @@ public class GoodReadService {
     }
 
     public List<Book> getTopKReadBooks(User user) {
-        return this.bookLookupStrategy.getTopBooksReadByFriends(user);
+        return this.bookLookupStrategy.getTopBooksReadByFriends(user, bookService.getBooks());
     }
 
-    public List<Book> getTopBooksReadByNetwork(User user, int maxDepth) {
-        return this.bookLookupStrategy.getTopBooksReadByNetwork(user, bookService.getBooks(), maxDepth);
+    public List<Book> getTopBooksReadByNetwork(User user, int k, int maxDepth) {
+        return this.bookLookupStrategy.getTopBooksReadByNetwork(user, bookService.getBooks(), k, maxDepth);
     }
 
 }

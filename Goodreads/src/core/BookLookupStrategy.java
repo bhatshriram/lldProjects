@@ -7,6 +7,6 @@ import models.User;
 
 public interface BookLookupStrategy {
 
-    List<Book> getTopBooksReadByFriends(User user);
-    List<Book> getTopBooksReadByNetwork(User user, Map<String, Book> books, int maxDepth);
+    List<Book> getTopBooksReadByFriends(User user, Map<String, Book> books);
+    List<Book> getTopBooksReadByNetwork(User user, Map<String, Book> books, int k, int maxDepth);
 }
